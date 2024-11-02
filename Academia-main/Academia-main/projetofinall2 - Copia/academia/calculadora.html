@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Treino</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+<body>
+
+    <tbody id="lista">
+    </tbody>
+
+    <div class="container">
+        <h1>Calculadora de Treino</h1>
+        <form id="form-dados">
+            <label for="peso">Peso (kg):</label>
+            <input type="text" id="peso" name="peso" required><br>
+        
+            <label for="altura">Altura (m):</label>
+            <input type="text" id="altura" name="altura" required><br>
+        
+            <label>Objetivo:</label><br>
+
+            <input type="radio" id="nenhum" name="objetivo" value="nenhum" checked>
+            <label for="nenhum">Nenhum (Plano Padrão)</label><br>
+            
+            <input type="radio" id="perder-gordura" name="objetivo" value="perder-gordura">
+            <label for="perder-gordura">Perder Gordura</label><br>
+        
+            <input type="radio" id="aumentar-musculatura" name="objetivo" value="aumentar-musculatura">
+            <label for="aumentar-musculatura">Aumentar Musculatura</label><br>
+        
+        
+            <button type="submit" id="btn_gerar">Salvar plano</button>
+           
+           
+           <br>
+           <br>
+            <button id="btn-reiniciar">Ver seu Plano</button>
+
+            <input type="hidden" id="aid">
+        </form>
+
+        <div id="plano-inicial"></div>
+        <div id="imc-result"></div>
+        <div id="treino-semanal"></div>
+
+        <button id="view-diet-btn" style="display:none;" onclick="showDietOptions()">Ver Dietas com base no seu IMC</button>
+        
+        <div id="recipe-container"></div>
+
+        <h2>Evolução do Peso</h2>
+        <canvas id="grafico-evolucao" width="400" height="200"></canvas>
+
+        <h2>Gráfico IMC</h2>
+        <canvas id="graficoIMC" width="400" height="200"></canvas>
+    </div>
+    <script src="script.js"></script>
+    <script src="dietaimc.js"></script>
+    <script src="dieta.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>
